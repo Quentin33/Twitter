@@ -1,2 +1,5 @@
 <%= render :partial => "message_form" %>
 <%= render :partial => @posts %> 
+<%= link_to "Make Friends", users_path %>  
+  
+<%= link_to "My Friends", { :controller => "users", :action => "show", :id => current_user } %> 

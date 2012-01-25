@@ -7,13 +7,11 @@
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
-  <body>
-    <div id="content">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
-      <%= yield %>
-    </div>
-  </body>
+  <body>  
+  <div id="content">  
+    <p><%= render :partial => "users/login" %></p>  
+  
+    <%= yield %>  
+  </div>  
+</body> 
 </html>

@@ -1,5 +1,10 @@
-    <%=form_tag(:controller => "posts", :action => "create") do %>  
-      <%= label_tag(:twit, "Votre twit :") %><br />  
-      <%= text_area_tag(:twit, nil, :size => "44x6") %><br />  
-      <%= submit_tag("Update") %>  
-    <%end%>  
+    <% if logged_in? %>  
+      
+      <%= form_tag(:controller => "posts", :action => "create") do %>  
+        <%= label_tag(:twit, "What are you doing?") %><br />  
+        <%= text_area_tag(:twit, nil, :size => "60x2") %><br />  
+        <%= submit_tag("Update") %>  
+      
+      <% end %>  
+    <% end %>  
+
