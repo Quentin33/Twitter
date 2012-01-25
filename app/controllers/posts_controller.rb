@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   	end
 
 	def create  
-	    @post = Post.create(:twit => params[:twit])  
+	    @post = Post.create(:twit => params[:twit], :user_id => session[:user_id])  
 	    respond_to do |format|  
 	      if @post.save  
 	        format.html { redirect_to posts_path }  
