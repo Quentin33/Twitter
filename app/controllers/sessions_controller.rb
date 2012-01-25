@@ -6,15 +6,15 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:login], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to_target_or_default root_url, :notice => "Logged in successfully."
+      redirect_to posts_path, :notice => "Connecté avec succès !"
     else
-      flash.now[:alert] = "Invalid login or password."
+      flash.now[:alert] = "Utilisateur ou Mot de passe invalide !"
       render :action => 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "You have been logged out."
+    redirect_to posts_path, :notice => "Vous êtes bien déconnecté !"
   end
 end

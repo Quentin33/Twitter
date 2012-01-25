@@ -1,9 +1,9 @@
     <% if logged_in? %>  
       
       <%= form_tag(:controller => "posts", :action => "create") do %>  
-        <%= label_tag(:twit, "What are you doing?") %><br />  
+        <%= label_tag(:twit, "Que faites-vous ?") %><br />  
         <%= text_area_tag(:twit, nil, :size => "60x2") %><br />  
-        <%= submit_tag("Update") %>  
+        <%= submit_tag("Twitter !") %>  
       
       <% end %>  
     <% end %>  
