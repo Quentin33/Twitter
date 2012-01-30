@@ -1,2 +1,2 @@
-<p><b>Créé il y a <%= time_ago_in_words(post.created_at) %> Par  <%= User.find_by_id(post.user_id).username %></b></p>  
+<p><b>Créé il y a <%= time_ago_in_words(post.created_at) %> | par  <%= User.find_by_id(post.user_id).username %></b></p>  
 <p><%= post.twit %></p> 

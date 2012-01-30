@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
 	def index  
+		@title = "Twits"
 		#on trie les twits par date de création
     	@posts = Post.all(:order => "created_at DESC")  
 	    respond_to do |format|  
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
   	end
 
 	def create  
+		@title = "Twits"
 	    @post = Post.create(:twit => params[:twit], :user_id => session[:user_id])  
 	    respond_to do |format|  
 	      if @post.save  
