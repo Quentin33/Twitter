@@ -1,10 +1,10 @@
     <% if logged_in? %>  
-      
       <%= form_tag(:controller => "posts", :action => "create") do %>  
-        <%= label_tag(:twit, "Que faites-vous ?") %><br />  
-        <%= text_area_tag(:twit, nil, :size => "60x2") %><br />  
-        <%= submit_tag("Twitter !") %>  
-      
-      <% end %>  
-    <% end %>  
+      	<div class="row show-grid" title="Four column layout">
+		    <div class="span3"><%= label_tag(:twit, "Que faites-vous ?") %></div>
+		    <div class="span8"><%= text_area_tag(:twit, nil, :class => "xxlarge") %></div>
+		    <div class="span4"><%= submit_tag("Twitter !", :class => "btn small primary") %></div>
+	  	</div>
 
+      <% end %>  
+    <% end %> 

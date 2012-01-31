@@ -8,10 +8,19 @@
     <%= yield(:head) %>
   </head>
   <body>  
-  <div id="content">  
-    <p><%= render :partial => "users/login" %></p>  
-  
-    <%= yield %>  
-  </div>  
-</body> 
+    <div class="topbar" data-dropdown="dropdown">
+      <div class="topbar-inner">
+        <div class="container">
+          <h3><img src="/twitter.png" title="TwitterLogo"/></h3>
+        </div>
+      </div><!-- /topbar-inner -->
+    </div>
+
+    <div class="container" id="content" style="margin-top:100px;" >  
+      <p>
+        <%= render :partial => "users/login" %>
+      </p>
+      <%= yield %>  
+    </div>  
+  </body> 
 </html>

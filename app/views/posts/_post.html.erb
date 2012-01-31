@@ -1,2 +1,16 @@
-<p><b>Créé il y a <%= time_ago_in_words(post.created_at) %> | par  <%= User.find_by_id(post.user_id).username %></b></p>  
-<p><%= post.twit %></p> 
+<p>
+	<b>
+		<span class="label notice">
+			Créé il y a <%= time_ago_in_words(post.created_at) %>
+		</span>
+		&nbsp;
+		<span class="label success">
+			par <%= User.find_by_id(post.user_id).username %>
+		</span>
+	</b>
+</p>  
+<p>
+	<div class="alert-message block-message info">
+		<%= post.twit %>
+	</div>
+</p> 
