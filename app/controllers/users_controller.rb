@@ -12,8 +12,16 @@ class UsersController < ApplicationController
   end  
   
   def show  
-    @title = current_user.name
-    @user = current_user  
+    @user = User.where("username = ?", params[:username])
+    @user_posts  = Post.where(:user_id => @user.first.id)
+
+    @title = User.first.username
+
+    respond_to do |format|
+      format.html # show.html.erb
+    end
+    #@title = current_user.username
+    #@user = User.find(params[:id])
   end
 
   def create

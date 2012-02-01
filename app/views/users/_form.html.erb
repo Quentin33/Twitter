@@ -1,20 +1,55 @@
+<%= render "/layouts/header" %>
+<div class="container" id="content" style="margin-top:100px;" >  
+
+<p>Déjà inscrit ? <%= link_to "Connectez-vous !", login_path %></p>
+<br />
+
+<h1>Inscription</h1>
+<br />
+
 <%= form_for @user do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
+  <div class="row show-grid" title="Four column layout">
+     <div class="span3"> 
+    <%= f.label :username, "Nom d'utilisateur :" %><br />
+    </div>
+    <div class="span3"> 
     <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email, "Email Address" %><br />
+    </div>
+  </div>
+  <br />
+
+  <div class="row show-grid" title="Four column layout">
+     <div class="span3"> 
+    <%= f.label :email, "Email :" %><br />
+    </div>
+    <div class="span3"> 
     <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
+    </div>
+  </div>
+  <br />
+
+  <div class="row show-grid" title="Four column layout">
+     <div class="span3"> 
+    <%= f.label :password, "Mot de passe :" %><br />
+    </div>
+    <div class="span3"> 
     <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation, "Confirm Password" %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>
+    </div>
+  </div>
+  <br />
+
+  <div class="row show-grid" title="Four column layout">
+     <div class="span3"> 
+      <%= f.label :password_confirmation, "Confirmation :" %><br />
+    </div>
+    <div class="span3"> 
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+  <br />
+  <br />
+
+  <p><%= f.submit(@user.new_record? ? "S'enregistrer" : "Update", :class => "btn small primary") %></p>
 <% end %>
+</div>

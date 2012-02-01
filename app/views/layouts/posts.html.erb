@@ -8,13 +8,7 @@
     <%= yield(:head) %>
   </head>
   <body>  
-    <div class="topbar" data-dropdown="dropdown">
-      <div class="topbar-inner">
-        <div class="container">
-          <h3><img src="/twitter.png" title="TwitterLogo"/></h3>
-        </div>
-      </div><!-- /topbar-inner -->
-    </div>
+    <%= render "/layouts/header" %>
 
     <div class="container" id="content" style="margin-top:100px;" >  
       <p>
@@ -22,5 +16,8 @@
       </p>
       <%= yield %>  
     </div>  
+
+<%= render "/layouts/footer" %>
+    
   </body> 
 </html>

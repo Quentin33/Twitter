@@ -1,15 +1,31 @@
-<% title "Inscription" %>
+<div class="container" id="content" style="margin-top:100px;" >  
 
 <p>Pas encore inscrit ? <%= link_to "Inscrivez-vous !", signup_path %></p>
 
 <%= form_tag sessions_path do %>
-  <p>
-    <%= label_tag :login, "Nom d'utilisateur ou Email :" %><br />
-    <%= text_field_tag :login, params[:login] %>
-  </p>
-  <p>
-    <%= label_tag :password, "Mot de passe :" %><br />
-    <%= password_field_tag :password %>
-  </p>
-  <p><%= submit_tag "Connexion" %></p>
+	<br />
+  <div class="row show-grid" title="Four column layout">
+	   <div class="span3"> 
+	    <%= label_tag :login, "Nom d'utilisateur :" %>
+	   </div>
+	   <div class="span3">
+	    <%= text_field_tag :login, params[:login] %>
+	  	</div>
+  	</div>
+  	<br />
+  	<div class="row show-grid" title="Four column layout">
+	   <div class="span3"> 
+	     <%= label_tag :password, "Mot de passe :" %>
+	   </div>
+	   <div class="span3">
+	    <%= password_field_tag :password %>
+	  	</div>
+  	</div>
+  	<br /><br />
+	<p>
+		<%= submit_tag "Connexion", :class => "btn small primary" %>
+	</p>
+  	</div>
 <% end %>
+
+</div>

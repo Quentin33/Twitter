@@ -1,7 +1,30 @@
-    <div id="users">  
-      <% Post.find(:all, :conditons => ["user_id like ?", params[:id]]).each do |post| %>  
-      <div id="user">   
-            <%=h post.user_id %>  
-        </div>  
-      <% end %>  
-    </div>  
+    
+<%= render "/layouts/header" %>
+<div class="container" id="content" style="margin-top:100px;" >  
+	<span class="alert alert-error">   
+	    	<br />
+			Nom d'utilisateur :
+			<%= @user.first.username %>
+			<br /> <br />
+			Email :
+			<%= @user.first.email %>
+			<br /><br />
+	</span>
+
+
+	<div class="alert-message warning">
+		<P>Twits de <%= @user.first.username %> ( <%= @user_posts.count  %> ) :</p>
+	</div>
+
+		<% @user_posts.all(:order => "created_at DESC").each do |twits| %>
+
+		<p>
+		<span class="label notice">
+			Créé il y a <%= time_ago_in_words(twits.created_at) %>
+	</span>
+	<div class="alert-message block-message info">
+		<%= twits.twit %><br />
+	</div>
+	</p>
+	<% end %>
+</div>

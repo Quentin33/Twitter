@@ -4,9 +4,11 @@
 			Créé il y a <%= time_ago_in_words(post.created_at) %>
 		</span>
 		&nbsp;
+		<a href= <%= "/users/tweet/" + User.find_by_id(post.user_id).username %> >
 		<span class="label success">
 			par <%= User.find_by_id(post.user_id).username %>
 		</span>
+		</a>
 	</b>
 </p>  
 <p>

@@ -18,6 +18,8 @@ Twitter::Application.routes.draw do
 
   resources :posts
 
+  match 'users/tweet/:username' => 'users#show', :as => :show
+
   match ':controller(/:action(/:id(.:format)))' 
 
   # The priority is based upon order of creation:
