@@ -3,11 +3,14 @@
   <head>
     <title>Twitter | <%= @title %></title>
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag :jquery %>
+    <script type="text/javascript" src="http://localhost:1234/socket.io/socket.io.js"></script>
+    <%= javascript_include_tag :actualisation %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
-  <body>  
+  <body> 
+   
     <%= render "/layouts/header" %>
 
     <div class="container" id="content" style="margin-top:100px;" >  
@@ -17,7 +20,7 @@
       <%= yield %>  
     </div>  
 
-<%= render "/layouts/footer" %>
-    
+    <%= render "/layouts/footer" %>
+
   </body> 
 </html>

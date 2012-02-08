@@ -2,8 +2,8 @@
       <%= form_tag(:controller => "posts", :action => "create") do %>  
       	<div class="row show-grid" title="Four column layout">
 		    <div class="span3"><%= label_tag(:twit, "Que faites-vous ?") %></div>
-		    <div class="span8"><%= text_area_tag(:twit, nil, :class => "xxlarge") %></div>
-		    <div class="span4"><%= submit_tag("Twitter !", :class => "btn small primary") %></div>
+		    <div class="span8"><%= text_area_tag(:twit, nil, :class => "xxlarge", :id => "message") %></div>
+		    <div class="span4"><%= submit_tag("Twitter !", :action => "/", :id => "btnEnvoiTweet", :class => "btn small primary") %></div>
 	  	</div>
 
       <% end %>  
