@@ -6,8 +6,7 @@
     <div id="user">  
         <% if user.username != current_user.username %>  
           <%=h user.username %>  
-          <%= link_to "Voir Profil", "/users/tweet/" + user.username, :method => :show %> 
-          <%= link_to "AJouter en amis", friendships_path(:friend_id => user), :method => :post %>  
+          <%= link_to "Voir Profil", "/users/tweet/" + user.username, :method => :show %>
         <% end %>  
       </div>  
     

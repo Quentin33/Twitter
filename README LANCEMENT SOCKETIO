@@ -1,0 +1,5 @@
+Pour lancer SOCKET.IO : 
+
+node ./app/assets/javascripts/server.js
+
+

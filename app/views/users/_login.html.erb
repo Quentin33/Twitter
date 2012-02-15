@@ -1,6 +1,6 @@
 <%= render "/layouts/header" %>
 <% if logged_in? %>  
-  Bienvenue <%= current_user.username %> ! Ce n'est pas vous ?  
+  Bienvenue <span id="DivCurrentUser"><%= current_user.username %></span> ! Ce n'est pas vous ?  
   <%= link_to "Déconnexion", logout_path %>  
 <% else %>  
   <%= link_to "Inscription", signup_path %> or  
